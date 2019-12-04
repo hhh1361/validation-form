@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/validation-form/static/css/main.30315265.chunk.css",
+    "main.js": "/validation-form/static/js/main.6c873c3b.chunk.js",
+    "main.js.map": "/validation-form/static/js/main.6c873c3b.chunk.js.map",
+    "runtime-main.js": "/validation-form/static/js/runtime-main.341dc8fa.js",
+    "runtime-main.js.map": "/validation-form/static/js/runtime-main.341dc8fa.js.map",
+    "static/css/2.17e5ed98.chunk.css": "/validation-form/static/css/2.17e5ed98.chunk.css",
+    "static/js/2.6010ebfe.chunk.js": "/validation-form/static/js/2.6010ebfe.chunk.js",
+    "static/js/2.6010ebfe.chunk.js.map": "/validation-form/static/js/2.6010ebfe.chunk.js.map",
+    "index.html": "/validation-form/index.html",
+    "precache-manifest.0ddb9ce310cd9963721498a997743bde.js": "/validation-form/precache-manifest.0ddb9ce310cd9963721498a997743bde.js",
+    "service-worker.js": "/validation-form/service-worker.js",
+    "static/css/2.17e5ed98.chunk.css.map": "/validation-form/static/css/2.17e5ed98.chunk.css.map",
+    "static/css/main.30315265.chunk.css.map": "/validation-form/static/css/main.30315265.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.341dc8fa.js",
+    "static/css/2.17e5ed98.chunk.css",
+    "static/js/2.6010ebfe.chunk.js",
+    "static/css/main.30315265.chunk.css",
+    "static/js/main.6c873c3b.chunk.js"
+  ]
+}
