@@ -2,7 +2,6 @@ import React from 'react';
 
 import { connect } from 'react-redux'
 import './timezone.css'
-import timezone from './timezone';
 
 class Timezone extends React.Component {
   onPrevStep() {
@@ -28,12 +27,13 @@ class Timezone extends React.Component {
           <h3 className="text-muted">Set your time zone</h3>
         </div>
       </div>
+      <p className="createAccount">CREATE ACCOUNT</p>
       <div className="col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5"> 
         <div className="progress" id='progress'>
           <div className="progress-bar" style={{width: '80%'}}id='progress-bar' role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
       </div>
-      <p className="createAccount">CREATE ACCOUNT</p>
+
       <div className="timezone-wrapper col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5"> 
         <p className="text-justify">Select your timezone</p>
         <select className="timezone form-control" name="timezone" id="timezone" defaultValue={GMT}>

@@ -1,0 +1,23 @@
+.field-wrapper p{
+    color: rgb(41, 143, 211);
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.field-wrapper {
+    background-color: rgba(243, 243, 243, 0.322) !important;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin: 5px;
+    height: 40px;
+}
+
+.field-wrapper input, .field-wrapper button, .field-wrapper select {
+    border: none !important;
+    background-color: rgba(243, 243, 243, 0.322) !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0;
+    box-shadow: none !important;
+    height: 22px;
+}

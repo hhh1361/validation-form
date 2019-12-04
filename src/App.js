@@ -17,6 +17,10 @@ class App extends React.Component {
           {this.props.store.stage === 'company' ? <Company store={this.props.store} /> : null}
           {this.props.store.stage === 'timezone' ? <Timezone store={this.props.store} /> : null}
           {this.props.store.stage === 'finish' ? <Finish store={this.props.store} /> : null}
+          {this.props.store.stage === 'completed' ? 
+          <div className="alert-success">
+            <p>Congratulations! Your account has been created</p>
+          </div> : null}
         </div>
     )
   }

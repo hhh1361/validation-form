@@ -69,6 +69,7 @@ class Info extends React.Component {
         <h3 className="text-muted">Your name will be displayed in all reports, documents, exc.</h3>
         </div>
       </div>
+      <p className="createAccount">CREATE ACCOUNT</p>
       <div className="col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5"> 
         <div className="progress" id='progress'>
         {this.props.name.length ? 
@@ -77,7 +78,7 @@ class Info extends React.Component {
             }
         </div>
       </div>
-      <p className="createAccount">CREATE ACCOUNT</p>
+
       <div className="col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5"> 
         <input type="text" className="form-control inputData inputName text-muted" placeholder="First name" defaultValue={this.props.name} onChange={this.onChangeNameHandler.bind(this)}/>
       </div>
@@ -96,7 +97,7 @@ class Info extends React.Component {
           </button>
           <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <div className="dropdown-item" onClick={this.onClickChoseGender.bind(this)}>Male</div>
-            <div className="dropdown-item" onClick={this.onClickChoseGender.bind(this)}>Fermale</div>
+            <div className="dropdown-item" onClick={this.onClickChoseGender.bind(this)}>Female</div>
           </div>
         </div>
       </div>

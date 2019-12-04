@@ -47,12 +47,13 @@ class Email extends React.Component {
         <h3 className="text-muted">Easy to use anytime, anywhere, for everyone.</h3>
         </div>
       </div>
+      <p className="createAccount">CREATE ACCOUNT</p>
       <div className="col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5"> 
         <div className="progress" id='progress'>
           <div className="progress-bar" id='progress-bar' role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
       </div>
-      <p className="createAccount">CREATE ACCOUNT</p>
+
       <div className="col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5"> 
         <input type="text" className="form-control inputEmail text-muted" placeholder="email" defaultValue={this.props.email}/>
       </div>

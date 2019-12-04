@@ -36,6 +36,7 @@ class Company extends React.Component {
           <h3 className="text-muted">Tracking company vehicles? (optional)</h3>
         </div>
       </div>
+      <p className="createAccount">CREATE ACCOUNT</p>
       <div className="col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5"> 
         <div className="progress" id='progress'>
             {this.props.company.length ? 
@@ -45,7 +46,7 @@ class Company extends React.Component {
           
         </div>
       </div>
-      <p className="createAccount">CREATE ACCOUNT</p>
+
       <div className="col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5"> 
         <input type="text" className="form-control inputData inputCompany text-muted" placeholder="Company Name (optional)" defaultValue={this.props.company} onChange={this.onChangeNameHandler.bind(this)}/>
       </div>

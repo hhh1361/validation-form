@@ -11,15 +11,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const initialState = {
-  stage: 'timezone',
+  stage: 'email',
   email: '',
   name: '',
   surname: '',
   gender: '',
   company: '',
+  timezone: ''
 }
 
-function playlist(state = initialState, action) {
+function information(state = initialState, action) {
     console.log(action)
     switch(action.type) {
       case 'CHANGE_STAGE':
@@ -52,13 +53,18 @@ function playlist(state = initialState, action) {
           ...state,
           company: action.payload
         } 
+      case 'ADD_TIMEZONE':
+        return {
+          ...state,
+          timezone: action.payload
+        } 
       default: 
         return state
     }
   }
 
   
-const store = createStore(playlist);
+const store = createStore(information);
 store.subscribe(() => {
   console.log(store.getState());
 })
