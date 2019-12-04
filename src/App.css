@@ -1,6 +1,7 @@
 .container-fluid {
   display: flex;
   flex-direction: column;
+  width: 1000px;
 }
 input {
   box-shadow: none !important;

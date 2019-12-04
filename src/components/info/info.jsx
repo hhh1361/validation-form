@@ -71,7 +71,7 @@ class Info extends React.Component {
           </div>
         </div>
         <p className="createAccount">CREATE ACCOUNT</p>
-        <div className="col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5">
+        <div className="col-12">
           <div className="progress" id="progress">
             {name.length ? (
               <div
@@ -99,7 +99,7 @@ class Info extends React.Component {
           </div>
         </div>
 
-        <div className="col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5">
+        <div className="col-12">
           <input
             type="text"
             className="form-control inputData inputName text-muted"
@@ -108,7 +108,7 @@ class Info extends React.Component {
             onChange={this.onChangeNameHandler.bind(this)}
           />
         </div>
-        <div className="col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5">
+        <div className="col-12">
           <input
             type="text"
             className="form-control inputData inputSurname text-muted"
@@ -117,7 +117,7 @@ class Info extends React.Component {
             onChange={this.onChangeNameHandler.bind(this)}
           />
         </div>
-        <div className="col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5">
+        <div className="col-12">
           <div className="dropdown">
             <button
               className="btn btn-secondary dropdown-toggle inputData inputGender"
@@ -146,12 +146,8 @@ class Info extends React.Component {
             </div>
           </div>
         </div>
-        <p className="text-muted description">
-          We`ll email a link to create a password for your new account.
-        </p>
         <div className="container">
           <div className="row">
-            <div className="col-md-2 col-1" />
             <div className="col-sm">
               <button
                 className="btn btn-primary"
@@ -163,7 +159,7 @@ class Info extends React.Component {
                 &#60; PREV STEP
               </button>
             </div>
-            <div className="col-md-3 col-1" />
+            <div className="col-md-6 col-5" />
             <div className="col-sm">
               <button
                 className="btn btn-primary"

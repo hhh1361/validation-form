@@ -100,7 +100,7 @@ class Finish extends React.Component {
           </div>
         </div>
         <p className="createAccount">CREATE ACCOUNT</p>
-        <div className="col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5">
+        <div className="col-12">
           <div className="progress" id="progress">
             <div
               className="progress-bar"
@@ -114,7 +114,7 @@ class Finish extends React.Component {
             />
           </div>
         </div>
-        <div className="field-wrapper col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5">
+        <div className="field-wrapper col-12">
           <p className="text-justify">Email</p>
           <input
             type="text"
@@ -125,7 +125,7 @@ class Finish extends React.Component {
             onChange={this.onChangeHandler.bind(this)}
           />
         </div>
-        <div className="field-wrapper col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5">
+        <div className="field-wrapper col-12">
           <p className="text-justify">First name</p>
           <input
             type="text"
@@ -135,7 +135,7 @@ class Finish extends React.Component {
             onChange={this.onChangeHandler.bind(this)}
           />
         </div>
-        <div className="field-wrapper col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5">
+        <div className="field-wrapper col-12">
           <p className="text-justify">Last name</p>
           <input
             type="text"
@@ -145,7 +145,7 @@ class Finish extends React.Component {
             onChange={this.onChangeHandler.bind(this)}
           />
         </div>
-        <div className="field-wrapper col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5">
+        <div className="field-wrapper col-12">
           <p className="text-justify">Gender</p>
           <div className="dropdown">
             <button
@@ -175,7 +175,7 @@ class Finish extends React.Component {
             </div>
           </div>
         </div>
-        <div className="field-wrapper col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5">
+        <div className="field-wrapper col-12">
           <p className="text-justify">Company</p>
           <input
             type="text"
@@ -184,7 +184,7 @@ class Finish extends React.Component {
             defaultValue={company}
           />
         </div>
-        <div className="field-wrapper timezone-wrapper col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
+        <div className="field-wrapper timezone-wrapper col-12">
           <p className="text-justify">Select your timezone</p>
           <select
             className="timezone form-control"
@@ -253,18 +253,14 @@ class Finish extends React.Component {
             </option>
           </select>
         </div>
-        <div className="container">
-          <div className="col-sm">
-            <button
-              type="button"
-              className="btn btn-primary btn-block"
-              id="btn-next"
-              onClick={this.onNextStep.bind(this)}
-            >
-              CREATE ACCOUNT
-            </button>
-          </div>
-        </div>
+        <button
+          type="button"
+          className="btn btn-primary btn-block"
+          id="btn-next"
+          onClick={this.onNextStep.bind(this)}
+        >
+          CREATE ACCOUNT
+        </button>
       </>
     )
   }

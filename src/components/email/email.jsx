@@ -52,7 +52,7 @@ class Email extends React.Component {
           </div>
         </div>
         <p className="createAccount">CREATE ACCOUNT</p>
-        <div className="col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5">
+        <div className=" col-12">
           <div className="progress" id="progress">
             <div
               className="progress-bar"
@@ -66,7 +66,7 @@ class Email extends React.Component {
           </div>
         </div>
 
-        <div className="col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5">
+        <div className=" col-12">
           <input
             type="text"
             className="form-control inputEmail text-muted"
@@ -79,9 +79,8 @@ class Email extends React.Component {
         </p>
         <div className="container">
           <div className="row">
-            <div className="col-md-2 col-1" />
             <div className="col-sm" />
-            <div className="col-md-3 col-1" />
+            <div className="col-md-6 col-5" />
             <div className="col-sm">
               <button
                 className="btn btn-primary"

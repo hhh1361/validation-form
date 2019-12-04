@@ -30,7 +30,7 @@ class Timezone extends React.Component {
           </div>
         </div>
         <p className="createAccount">CREATE ACCOUNT</p>
-        <div className="col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5">
+        <div className="col-12">
           <div className="progress" id="progress">
             <div
               className="progress-bar"
@@ -45,7 +45,7 @@ class Timezone extends React.Component {
           </div>
         </div>
 
-        <div className="timezone-wrapper col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5">
+        <div className="timezone-wrapper col-12">
           <p className="text-justify">Select your timezone</p>
           <select
             className="timezone form-control"
@@ -116,7 +116,6 @@ class Timezone extends React.Component {
         </div>
         <div className="container">
           <div className="row">
-            <div className="col-md-2 col-1" />
             <div className="col-sm">
               <button
                 type="button"
@@ -128,7 +127,7 @@ class Timezone extends React.Component {
                 &#60; PREV STEP
               </button>
             </div>
-            <div className="col-md-3 col-1" />
+            <div className="col-md-4 col-4" />
             <div className="col-sm">
               <div className="col-sm">
                 <button

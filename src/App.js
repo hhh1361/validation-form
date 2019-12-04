@@ -12,7 +12,7 @@ class App extends React.Component {
   render() {
     const { store } = this.props
     return (
-      <div className="container-fluid align-items-center">
+      <div className="container-fluid align-items-center col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5">
         {store.stage === 'email' ? <Email store={store} /> : null}
         {store.stage === 'info' ? <Info store={store} /> : null}
         {store.stage === 'company' ? <Company store={store} /> : null}
