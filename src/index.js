@@ -11,14 +11,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const initialState = {
-  stage: 'email',
-  email: [],
-  fullName: {
-    name: [],
-    surname: [],
-    gender: []
-  },
-  company: [],
+  stage: 'info',
+  email: '',
+  name: '',
+  surname: '',
+  gender: '',
+  company: '',
 }
 
 function playlist(state = initialState, action) {
@@ -32,15 +30,28 @@ function playlist(state = initialState, action) {
       case 'ADD_EMAIL':
         return {
           ...state,
-          email: [action.payload]
+          email: action.payload
         } 
       case 'ADD_NAME':
         return {
           ...state,
-          fullname: {...state.fullName, 
-            name: [action.payload]
-          }
-        }
+          name: action.payload
+        } 
+      case 'ADD_NAME':
+        return {
+          ...state,
+          name: action.payload
+        } 
+      case 'ADD_SURNAME':
+        return {
+          ...state,
+          surname: action.payload
+        } 
+      case 'ADD_GENDER':
+        return {
+          ...state,
+          gender: action.payload
+        } 
       default: 
         return state
     }

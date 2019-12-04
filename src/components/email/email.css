@@ -2,8 +2,8 @@
     font-weight: bold;
     color: rgba(30, 30, 94, 0.747);
 }
-.inputEmail {
-    background-color: rgba(243, 243, 243, 0.322);
+input {
+    background-color: rgba(243, 243, 243, 0.322) !important;
     border-radius: 5px;
     border: 1px solid gray;
 }
@@ -16,9 +16,15 @@
     height: 0.3rem;
     margin-bottom: 40px;
 }
+#progress-bar {
+    width: 0%;
+}
 .header {
     margin: 60px 0;
 }
 .description {
     margin: 10px 0;
 }
+input {
+    box-shadow: none;
+  }

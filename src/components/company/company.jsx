@@ -1,32 +1,17 @@
 import React from 'react';
 import 'bootstrap';
 import { connect } from 'react-redux'
-import './info.css'
+import './company.css'
 
-class Info extends React.Component {
+class Company extends React.Component {
   onPrevStep() {
     this.props.onPrevStep()
   }
   onNextStep() {
-    const name = document.querySelector('.inputName');
-    const surname = document.querySelector('.inputSurname');
-    const gender = document.querySelector('.inputGender');
-    console.log(name, surname, gender !== 'Gender')
-    if (name.value && surname.value && gender.innerHTML !== 'Gender') {
-      this.props.onNextStep(name.value, surname.value, gender.innerHTML)
-    } else {
-      if (!name.value) {
-        name.style.border = '1px solid red'
-      }
-      if(!surname.value) {
-        surname.style.border = '1px solid red'
-      }
-      if(gender.innerHTML === 'Gender') {
-        console.log(gender.innerHTML)
-        gender.style.border = '1px solid red'
-      }
-    }
-    
+    const name = document.querySelector('.inputName').value;
+    const surname = document.querySelector('.inputSurname').value;
+    const gender = document.querySelector('.inputGender').innerHTML;
+    this.props.onNextStep(name, surname, gender)
   }
   progressBar() {
     const inputName = document.querySelector('.inputName');
@@ -76,10 +61,10 @@ class Info extends React.Component {
       </div>
       <p className="createAccount">CREATE ACCOUNT</p>
       <div className="col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5"> 
-        <input type="text" className="form-control inputData inputName text-muted" placeholder="First name" defaultValue={this.props.name} onChange={this.onChangeNameHandler.bind(this)}/>
+        <input type="text" className="form-control inputData inputName text-muted" placeholder="First name" onChange={this.onChangeNameHandler.bind(this)}/>
       </div>
       <div className="col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5"> 
-        <input type="text" className="form-control inputData inputSurname text-muted" placeholder="Second name" defaultValue={this.props.surname} onChange={this.onChangeNameHandler.bind(this)}/>
+        <input type="text" className="form-control inputData inputSurname text-muted" placeholder="Second name" onChange={this.onChangeNameHandler.bind(this)}/>
       </div>
       <div className="col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5"> 
         <div className="dropdown">
@@ -89,7 +74,7 @@ class Info extends React.Component {
                   aria-haspopup="true" 
                   aria-expanded="false"
                   data-offset="0">
-            {this.props.gender ? this.props.gender : 'Gender'}
+            Gender
           </button>
           <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <div className="dropdown-item" onClick={this.onClickChoseGender.bind(this)}>Male</div>
@@ -119,10 +104,7 @@ class Info extends React.Component {
 export default connect(
   state => {
     return ({
-    stage: state.stage,
-    name: state.name,
-    surname: state.surname,
-    gender: state.gender
+    store: state.stage
 })},
   dispatch => ({
     onNextStep: (name, surname, gender) => {
@@ -132,7 +114,7 @@ export default connect(
       dispatch({ type: 'ADD_GENDER', payload: gender });
     },
     onPrevStep: () => {
-      dispatch({ type: 'CHANGE_STAGE', payload: 'email' });
+      dispatch({ type: 'CHANGE_STAGE', payload: 'info' });
     }
   })
-)(Info);
+)(Company);

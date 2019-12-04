@@ -2,3 +2,6 @@
   display: flex;
   flex-direction: column;
 }
+input {
+  box-shadow: none !important;
+}
