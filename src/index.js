@@ -23,11 +23,11 @@ const initialState = {
 
 function playlist(state = initialState, action) {
     console.log(action)
-    switch(action) {
+    switch(action.type) {
       case 'CHANGE_STAGE':
         return {
           ...state,
-          stage: [action.payload]
+          stage: action.payload
         } 
       case 'ADD_EMAIL':
         return {
@@ -48,7 +48,9 @@ function playlist(state = initialState, action) {
 
   
 const store = createStore(playlist);
-console.log()
+store.subscribe(() => {
+  console.log(store.getState());
+})
 
 ReactDOM.render(
   <Provider store={store}>
