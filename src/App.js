@@ -4,6 +4,8 @@ import './App.css'
 import Email from './components/email/email'
 import Info from './components/info/info'
 import Company from './components/company/company'
+import Timezone from './components/timezone/timezone'
+import Finish from './components/finish/finish'
 
 class App extends React.Component {
   
@@ -13,7 +15,8 @@ class App extends React.Component {
           {this.props.store.stage === 'email' ? <Email store={this.props} /> : null}
           {this.props.store.stage === 'info' ? <Info store={this.props.store} /> : null}
           {this.props.store.stage === 'company' ? <Company store={this.props.store} /> : null}
-          
+          {this.props.store.stage === 'timezone' ? <Timezone store={this.props.store} /> : null}
+          {this.props.store.stage === 'finish' ? <Finish store={this.props.store} /> : null}
         </div>
     )
   }

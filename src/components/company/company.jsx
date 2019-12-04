@@ -38,22 +38,25 @@ class Company extends React.Component {
       </div>
       <div className="col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5"> 
         <div className="progress" id='progress'>
-            
-          <div className="progress-bar" style={{width: '59%'}}id='progress-bar' role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            {this.props.company.length ? 
+                <div className="progress-bar" style={{width: '80%'}}id='progress-bar' role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div> :
+                <div className="progress-bar" style={{width: '60%'}}id='progress-bar' role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            }  
+          
         </div>
       </div>
       <p className="createAccount">CREATE ACCOUNT</p>
       <div className="col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5"> 
-        <input type="text" className="form-control inputData inputCompany text-muted" placeholder="Company Name (optional)" onChange={this.onChangeNameHandler.bind(this)}/>
+        <input type="text" className="form-control inputData inputCompany text-muted" placeholder="Company Name (optional)" defaultValue={this.props.company} onChange={this.onChangeNameHandler.bind(this)}/>
       </div>
 
       <div className="container">
         <div className="row">
-          <div className="col-2" />
+        <div className="col-md-2 col-1" />
           <div className="col-sm">
             <button className="btn btn-primary" id='btn-previous' onClick={this.onPrevStep.bind(this)}> &#60; PREV STEP</button>
           </div>
-          <div className="col-3" />
+          <div className="col-md-3 col-1" />
           <div className="col-sm">
             <button className="btn btn-primary" id='btn-next' onClick={this.onNextStep.bind(this)}>
                 {this.props.company ? 'NEXT STEP >' : 'SKIP THIS STEP >'}

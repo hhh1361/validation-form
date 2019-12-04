@@ -59,9 +59,9 @@ class Email extends React.Component {
       <p className="text-muted description">We`ll email a link to create a password for your new account.</p>
       <div className="container">
         <div className="row">
-          <div className="col-2" />
+        <div className="col-md-2 col-1" />
           <div className="col-sm" />
-          <div className="col-3" />
+          <div className="col-md-3 col-1" />
           <div className="col-sm">
             <button className="btn btn-primary" id='btn-next' onClick={this.onNextStep.bind(this)}>NEXT STEP ></button>
           </div>

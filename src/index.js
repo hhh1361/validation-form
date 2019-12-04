@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const initialState = {
-  stage: 'company',
+  stage: 'timezone',
   email: '',
   name: '',
   surname: '',
@@ -31,11 +31,6 @@ function playlist(state = initialState, action) {
         return {
           ...state,
           email: action.payload
-        } 
-      case 'ADD_NAME':
-        return {
-          ...state,
-          name: action.payload
         } 
       case 'ADD_NAME':
         return {

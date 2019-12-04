@@ -1,9 +1,9 @@
 import React from 'react';
 import 'bootstrap';
 import { connect } from 'react-redux'
-import './info.css'
+import './finish.css'
 
-class Info extends React.Component {
+class Finish extends React.Component {
   onPrevStep() {
     this.props.onPrevStep()
   }
@@ -138,4 +138,4 @@ export default connect(
       dispatch({ type: 'CHANGE_STAGE', payload: 'email' });
     }
   })
-)(Info);
+)(Finish);
