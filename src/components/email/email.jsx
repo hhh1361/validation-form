@@ -24,7 +24,7 @@ class Email extends React.Component {
       .then(function (data) {  
         if (data.status === 200) {
           email.style.color = 'green';
-          progressBar.style.width = '33%';
+          progressBar.style.width = '20%';
           email.placeholder = 'email';
           email.defaultValue = ctx.props.store.email;
           ctx.props.onNextStep(email.value)

@@ -33,8 +33,8 @@ class Info extends React.Component {
     const inputSurname = document.querySelector('.inputSurname');
     const inputGender = document.querySelector('.inputGender');
     const progressBar = document.getElementById('progress-bar');
-    const progress = (inputName.value.length ? 11 : 0) + (inputSurname.value.length ? 11 : 0) + (inputGender.innerHTML !== 'Gender' ? 11 : 0);
-    progressBar.style.width = 33+progress+'%'
+    const progress = (inputName.value.length ? 13 : 0) + (inputSurname.value.length ? 13 : 0) + (inputGender.innerHTML !== 'Gender' ? 13 : 0);
+    progressBar.style.width = 20+progress+'%'
   }
   onChangeNameHandler(e) {
     if (e.target.value.length) {
@@ -71,7 +71,10 @@ class Info extends React.Component {
       </div>
       <div className="col-12 col-sm-10 col-md-8	col-lg-6 col-xl-5"> 
         <div className="progress" id='progress'>
-          <div className="progress-bar" style={{width: '33%'}}id='progress-bar' role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        {this.props.name.length ? 
+            <div className="progress-bar" style={{width: '59%'}}id='progress-bar' role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div> :
+            <div className="progress-bar" style={{width: '20%'}}id='progress-bar' role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            }
         </div>
       </div>
       <p className="createAccount">CREATE ACCOUNT</p>
