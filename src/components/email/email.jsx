@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import './email.css'
+import Header from '../header/header'
+import Progress from '../progress/progress'
 
 class Email extends React.Component {
   onNextStep() {
@@ -26,7 +28,7 @@ class Email extends React.Component {
           email.style.color = 'green'
           progressBar.style.width = '20%'
           email.placeholder = 'email'
-          email.defaultValue = ctx.props.store.email
+          email.defaultValue = ctx.props.email
           ctx.props.onNextStep(email.value)
         } else {
           email.value = ''
@@ -41,32 +43,13 @@ class Email extends React.Component {
     const { email } = this.props
     return (
       <>
-        <div className="col-12 d-flex justify-content-center flex-column header">
-          <div className="d-inline-flex justify-content-center">
-            <h3 className="text-muted">Create your VINchain account.</h3>
-          </div>
-          <div className="d-inline-flex justify-content-center">
-            <h3 className="text-muted">
-              Easy to use anytime, anywhere, for everyone.
-            </h3>
-          </div>
-        </div>
-        <p className="createAccount">CREATE ACCOUNT</p>
-        <div className=" col-12">
-          <div className="progress" id="progress">
-            <div
-              className="progress-bar"
-              id="progress-bar"
-              role="progressbar"
-              aria-valuenow="0"
-              aria-valuemin="0"
-              aria-valuemax="100"
-              aria-label="Mute volume"
-            />
-          </div>
-        </div>
+        <Header
+          header1="Create your VINchain account."
+          header2="Easy to use anytime, anywhere, for everyone."
+        />
+        <Progress width="0%" />
 
-        <div className=" col-12">
+        <div className="col-12">
           <input
             type="text"
             className="form-control inputEmail text-muted"
@@ -86,7 +69,7 @@ class Email extends React.Component {
                 className="btn btn-primary"
                 type="button"
                 id="btn-next"
-                onClick={this.onNextStep.bind(this)}
+                onClick={() => this.onNextStep()}
               >
                 NEXT STEP &#62;
               </button>

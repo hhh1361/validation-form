@@ -2,6 +2,7 @@ import React from 'react'
 import 'bootstrap'
 import { connect } from 'react-redux'
 import './info.css'
+import Input from '../fields/input'
 
 class Info extends React.Component {
   onPrevStep() {
@@ -147,31 +148,27 @@ class Info extends React.Component {
           </div>
         </div>
         <div className="container">
-          <div className="row">
-            <div className="col-sm">
-              <button
-                className="btn btn-primary"
-                type="button"
-                id="btn-previous"
-                onClick={this.onPrevStep.bind(this)}
-              >
-                {' '}
-                &#60; PREV STEP
-              </button>
-            </div>
-            <div className="col-md-6 col-5" />
-            <div className="col-sm">
-              <button
-                className="btn btn-primary"
-                type="button"
-                id="btn-next"
-                onClick={this.onNextStep.bind(this)}
-              >
-                NEXT STEP &#62;
-              </button>
-            </div>
+          <div className="row d-flex justify-content-between">
+            <button
+              className="btn btn-primary"
+              type="button"
+              id="btn-previous"
+              onClick={this.onPrevStep.bind(this)}
+            >
+              &#60; PREV STEP
+            </button>
+            <button
+              className="btn btn-primary"
+              type="button"
+              id="btn-next"
+              onClick={this.onNextStep.bind(this)}
+            >
+              NEXT STEP &#62;
+            </button>
           </div>
         </div>
+        <Input field="Name" />
+        <Input field="Surname" />
       </>
     )
   }

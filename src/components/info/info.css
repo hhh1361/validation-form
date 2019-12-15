@@ -20,3 +20,9 @@
     color: rgb(145, 145, 145);
     font-weight: 600;
 }
+.green {
+    border: 1px solid green
+}
+.red {
+    border: 1px solid red
+}
