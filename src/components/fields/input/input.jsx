@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import './input.css'
 
 function Input(props) {
-  const { field, onDispatchField, input } = props
+  const { field, value, onDispatchField } = props
   const onChangeFieldHandler = e => {
     if (e.target.value.length) {
       e.target.className = `form-control inputData input${field} text-muted green`
@@ -17,23 +17,16 @@ function Input(props) {
       <input
         type="text"
         className={`form-control inputData input${field} text-muted`}
-        placeholder={input[field.toLowerCase()] ? null : field}
-        defaultValue={input[field.toLowerCase()] || null}
+        placeholder={value ? null : field}
+        defaultValue={value || null}
         onChange={onChangeFieldHandler}
       />
     </div>
   )
 }
 
-export default connect(
-  state => {
-    return {
-      input: state.information.input,
-    }
+export default connect(null, dispatch => ({
+  onDispatchField: (field, value) => {
+    dispatch({ type: `ADD_${field.toUpperCase()}`, payload: value })
   },
-  dispatch => ({
-    onDispatchField: (field, value) => {
-      dispatch({ type: `ADD_${field.toUpperCase()}`, payload: value })
-    },
-  }),
-)(Input)
+}))(Input)

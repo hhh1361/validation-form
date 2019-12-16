@@ -1,0 +1,35 @@
+.field-wrapper p{
+    color: rgb(41, 143, 211);
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.field-wrapper {
+    background-color: rgba(243, 243, 243, 0.322) !important;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin: 5px;
+    height: 40px;
+}
+
+select {
+    border: 1px solid rgba(128, 128, 128, 0.301);
+    border-radius: 3px;
+    background-color: rgba(243, 243, 243, 0.37);
+    color: gray;
+    width: 100%;
+    padding: 6px;
+    margin: 5px 0 !important;
+    box-shadow: none !important;
+    height: 38px;
+    outline: none;
+}
+.btn-primary {
+    margin-top: 20px;
+}
+.green {
+    border: 1px solid green !important
+}
+.red {
+    border: 1px solid red !important
+}
