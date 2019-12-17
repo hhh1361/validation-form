@@ -3,7 +3,9 @@
     margin: 0;
     font-size: 0.8rem;
 }
-
+.field-wrapper div {
+    padding: 0px;
+}
 .field-wrapper {
     background-color: rgba(243, 243, 243, 0.322) !important;
     border-radius: 5px;
@@ -23,4 +25,7 @@
 }
 .btn-primary {
     margin-top: 20px;
+}
+.field-wrapper select {
+    margin: 0px !important;
 }

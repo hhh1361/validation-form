@@ -12,7 +12,7 @@ const initialState = {
     input: { email: '', name: '', surname: '', company: '' },
     select: { gender: '', timezone: '' },
   },
-  stage: 'info',
+  stage: 'email',
   email: '',
   name: '',
   surname: '',

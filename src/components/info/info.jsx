@@ -8,35 +8,40 @@ import Header from '../header/header'
 import Progress from '../progress/progress'
 import Buttons from '../buttons/buttons'
 
-class Info extends React.Component {
-  progress = 60
+function Info(props) {
+  const { input, select, onNextStep, onPrevStep } = props
+  const { name, surname } = input
+  const { gender } = select
 
-  render() {
-    const { input, select, onNextStep, onPrevStep } = this.props
-    const { name, surname } = input
-    const { gender } = select
+  let progress = 60
+  progress += name ? 0 : -13
+  progress += surname ? 0 : -13
+  progress += gender ? 0 : -13
 
-    this.progress += name ? 0 : -13
-    this.progress += surname ? 0 : -13
-    this.progress += gender ? 0 : -13
-
-    return (
-      <>
-        <Header
-          header1="Let`s introduce ourselves!"
-          header2="Your name will be displayed in all reports, documents, exc."
-        />
-        <Progress width={`${this.progress}%`} />
-        <Input field="Name" value={name} />
-        <Input field="Surname" value={surname} />
-        <Select field="Gender" value={gender} />
-        <Buttons
-          onPrevStep={onPrevStep}
-          onNextStep={() => (name && surname && gender ? onNextStep() : null)}
-        />
-      </>
-    )
+  const onCheckHandler = e => {
+    if (e.target.value.length) {
+      e.target.className = `form-control inputData text-muted green`
+    } else {
+      e.target.className = `form-control inputData text-muted red`
+    }
   }
+
+  return (
+    <>
+      <Header
+        header1="Let`s introduce ourselves!"
+        header2="Your name will be displayed in all reports, documents, exc."
+      />
+      <Progress width={`${progress}%`} />
+      <Input field="Name" value={name} checkFunction={onCheckHandler} />
+      <Input field="Surname" value={surname} checkFunction={onCheckHandler} />
+      <Select field="Gender" value={gender} />
+      <Buttons
+        onPrevStep={onPrevStep}
+        onNextStep={() => (name && surname && gender ? onNextStep() : null)}
+      />
+    </>
+  )
 }
 
 export default connect(

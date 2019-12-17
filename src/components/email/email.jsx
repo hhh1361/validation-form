@@ -1,19 +1,24 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import './email.css'
+import Input from '../fields/input/input'
 import Header from '../header/header'
 import Progress from '../progress/progress'
+import Buttons from '../buttons/buttons'
 
-class Email extends React.Component {
-  onNextStep() {
-    const ctx = this
+function Email(props) {
+  const { input, onNextStep } = props
+  const { email } = input
+
+  let progress = 21
+  progress += email ? 0 : -21
+
+  const onCheckHandler = e => {
+    const element = e.target
     const url = new URL('https://frontapi.vinchain.io/auth/api/check-email/')
-    const email = document.querySelector('.inputEmail')
-    const progressBar = document.getElementById('progress-bar')
     const json = JSON.stringify({
-      email: email.value,
+      email: element.value,
     })
-
     fetch(url, {
       method: 'post',
       headers: new Headers({
@@ -25,71 +30,37 @@ class Email extends React.Component {
       .then(json)
       .then(data => {
         if (data.status === 200) {
-          email.style.color = 'green'
-          progressBar.style.width = '20%'
-          email.placeholder = 'email'
-          email.defaultValue = ctx.props.email
-          ctx.props.onNextStep(email.value)
+          element.className = `form-control inputData inputEmail text-muted green`
         } else {
-          email.value = ''
-          email.style.border = '1px solid red'
-          email.style.color = 'red'
-          email.placeholder = 'incorrect email'
+          element.className = `form-control inputData inputEmail text-muted red`
         }
       })
   }
 
-  render() {
-    const { email } = this.props
-    return (
-      <>
-        <Header
-          header1="Create your VINchain account."
-          header2="Easy to use anytime, anywhere, for everyone."
-        />
-        <Progress width="0%" />
-
-        <div className="col-12">
-          <input
-            type="text"
-            className="form-control inputEmail text-muted"
-            placeholder="email"
-            defaultValue={email}
-          />
-        </div>
-        <p className="text-muted description">
-          We`ll email a link to create a password for your new account.
-        </p>
-        <div className="container">
-          <div className="row">
-            <div className="col-sm" />
-            <div className="col-md-6 col-5" />
-            <div className="col-sm">
-              <button
-                className="btn btn-primary"
-                type="button"
-                id="btn-next"
-                onClick={() => this.onNextStep()}
-              >
-                NEXT STEP &#62;
-              </button>
-            </div>
-          </div>
-        </div>
-      </>
-    )
-  }
+  return (
+    <>
+      <Header
+        header1="Create your VINchain account."
+        header2="Easy to use anytime, anywhere, for everyone."
+      />
+      <Progress width={`${progress}%`} />
+      <Input field="Email" value={email} checkFunction={onCheckHandler} />
+      <p className="text-muted description">
+        We`ll email a link to create a password for your new account.
+      </p>
+      <Buttons onNextStep={() => (email ? onNextStep() : null)} />
+    </>
+  )
 }
 export default connect(
   state => {
     return {
       stage: state.stage,
-      email: state.email,
+      input: state.information.input,
     }
   },
   dispatch => ({
-    onNextStep: email => {
-      dispatch({ type: 'ADD_EMAIL', payload: email })
+    onNextStep: () => {
       dispatch({ type: 'CHANGE_STAGE', payload: 'info' })
     },
   }),

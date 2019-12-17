@@ -5,7 +5,7 @@ import './App.css'
 import Email from './components/email/email'
 import Info from './components/info/info'
 import Company from './components/company/company'
-import Timezone from './components/timezone/timezone'
+import Timezone from './components/timezone/timezone.jsx'
 import Finish from './components/finish/finish'
 
 class App extends React.Component {
@@ -31,5 +31,6 @@ class App extends React.Component {
 export default connect(state => {
   return {
     stage: state.stage,
+    information: state.information,
   }
 })(App)
