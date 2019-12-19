@@ -15,11 +15,13 @@ function Company(props) {
   let progress = 80
   progress += company ? 0 : -20
 
-  const onCheckHandler = e => {
+  const onCheckHandler = (e, func, field) => {
     if (e.target.value.length) {
-      e.target.className = `form-control inputData text-muted green`
+      e.target.className = `form-control input__data text-muted green`
+      func(field, e.target.value)
     } else {
-      e.target.className = `form-control inputData text-muted`
+      e.target.className = `form-control input__data text-muted`
+      func(field, '')
     }
   }
   return (

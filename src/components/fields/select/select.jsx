@@ -5,24 +5,14 @@ import timezoneJSON from '../../timezone/timezone.json'
 import genderJSON from '../../info/gender.json'
 
 function Select(props) {
-  const { field, value, defaultValue, onDispatchField, wrapped } = props
+  const { field, value, json, defaultValue, onDispatchField, wrapped } = props
   if (!value && defaultValue) {
     onDispatchField(field.toLowerCase(), defaultValue)
   }
   const onSelect = e => {
     onDispatchField(field, e.target.value)
   }
-  let json
-  switch (field) {
-    case 'Gender':
-      json = genderJSON
-      break
-    case 'Timezone':
-      json = timezoneJSON
-      break
-    default:
-      break
-  }
+
   return wrapped ? (
     <div className="field-wrapper col-12">
       <p className="text-justify">{field}</p>

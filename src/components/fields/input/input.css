@@ -1,6 +1,8 @@
 .green {
-    border: 1px solid green !important
+    border: 1px solid green !important;
+    color: #6c757d!important;
 }
 .red {
-    border: 1px solid red !important
+    border: 1px solid red !important;
+    color: red !important;
 }

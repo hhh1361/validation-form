@@ -4,6 +4,7 @@ import Select from '../fields/select/select'
 import Header from '../header/header'
 import Progress from '../progress/progress'
 import Buttons from '../buttons/buttons'
+import timezoneJSON from './timezone.json'
 import './timezone.css'
 
 function Timezone(props) {
@@ -18,7 +19,12 @@ function Timezone(props) {
     <>
       <Header header1="Set your time zone" />
       <Progress width={`${progress}%`} />
-      <Select field="Timezone" value={timezone} defaultValue={GMT} />
+      <Select
+        field="Timezone"
+        value={timezone}
+        defaultValue={GMT}
+        json={timezoneJSON}
+      />
       <Buttons
         onPrevStep={onPrevStep}
         onNextStep={() => (timezone ? onNextStep() : null)}

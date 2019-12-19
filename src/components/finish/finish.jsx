@@ -6,13 +6,15 @@ import Select from '../fields/select/select'
 import Header from '../header/header'
 import Progress from '../progress/progress'
 import Buttons from '../buttons/buttons'
+import timezoneJSON from '../timezone/timezone.json'
+import genderJSON from '../info/gender.json'
 import './finish.css'
 
 function Finish(props) {
   const { input, select, onNextStep } = props
   const { email, name, surname, company } = input
   const { gender, timezone } = select
-  const check = e => {
+  const check = (e, func, field) => {
     if (e.target.id === 'email') {
       const element = e.target
       const url = new URL('https://frontapi.vinchain.io/auth/api/check-email/')
@@ -30,17 +32,19 @@ function Finish(props) {
         .then(json)
         .then(data => {
           if (data.status === 200) {
-            element.className = `form-control inputData inputEmail text-muted`
+            element.className = `form-control input__data text-muted green`
+            func('email', element.value)
           } else {
-            element.className = `form-control inputData inputEmail text-muted red`
+            element.className = `form-control input__data red`
+            func('email', '')
           }
         })
     } else if (e.target.id !== 'company') {
-      if (e.target.value.length) {
-        e.target.className = `form-control inputData text-muted`
-      } else {
-        e.target.className = `form-control inputData text-muted red`
-      }
+      e.target.className = `form-control input__data text-muted green`
+      func(field, e.target.value)
+    } else {
+      e.target.className = `form-control input__data red`
+      func(field, '')
     }
   }
   const onCreate = () =>
@@ -53,9 +57,9 @@ function Finish(props) {
       <Input field="Email" value={email} checkFunction={check} wrapped />
       <Input field="Name" value={name} checkFunction={check} wrapped />
       <Input field="Surname" value={surname} checkFunction={check} wrapped />
-      <Select field="Gender" value={gender} wrapped />
+      <Select field="Gender" value={gender} json={genderJSON} wrapped />
       <Input field="Company" value={company} checkFunction={check} wrapped />
-      <Select field="Timezone" value={timezone} wrapped />
+      <Select field="Timezone" value={timezone} json={timezoneJSON} wrapped />
       <Buttons onCreate={onCreate} />
     </>
   )

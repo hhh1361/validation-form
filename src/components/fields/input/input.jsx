@@ -3,7 +3,14 @@ import { connect } from 'react-redux'
 import './input.css'
 
 function Input(props) {
-  const { field, value, onDispatchField, checkFunction, wrapped } = props
+  const {
+    field,
+    value,
+    onDispatchField,
+    checkFunction,
+    wrapped,
+    initial,
+  } = props
 
   return wrapped ? (
     <div className="field-wrapper col-12">
@@ -12,12 +19,11 @@ function Input(props) {
         <input
           type="text"
           id={field.toLowerCase()}
-          className={`form-control inputData input${field} text-muted`}
+          className="form-control input__data text-muted"
           placeholder={value ? null : field}
           defaultValue={value || null}
           onChange={e => {
-            checkFunction(e)
-            onDispatchField(field, e.target.value)
+            checkFunction(e, onDispatchField, field)
           }}
         />
       </div>
@@ -27,12 +33,11 @@ function Input(props) {
       <input
         type="text"
         id={field.toLowerCase()}
-        className={`form-control inputData input${field} text-muted`}
+        className="form-control input__data text-muted"
         placeholder={value ? null : field}
         defaultValue={value || null}
         onChange={e => {
-          checkFunction(e)
-          onDispatchField(field, e.target.value)
+          checkFunction(e, onDispatchField, field)
         }}
       />
     </div>

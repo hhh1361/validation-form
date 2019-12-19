@@ -13,7 +13,7 @@ function Email(props) {
   let progress = 21
   progress += email ? 0 : -21
 
-  const onCheckHandler = e => {
+  const onCheckHandler = (e, func) => {
     const element = e.target
     const url = new URL('https://frontapi.vinchain.io/auth/api/check-email/')
     const json = JSON.stringify({
@@ -30,9 +30,11 @@ function Email(props) {
       .then(json)
       .then(data => {
         if (data.status === 200) {
-          element.className = `form-control inputData inputEmail text-muted green`
+          element.className = `form-control input__data text-muted green`
+          func('email', element.value)
         } else {
-          element.className = `form-control inputData inputEmail text-muted red`
+          element.className = `form-control input__data red`
+          func('email', '')
         }
       })
   }

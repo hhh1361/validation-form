@@ -7,6 +7,7 @@ import Select from '../fields/select/select'
 import Header from '../header/header'
 import Progress from '../progress/progress'
 import Buttons from '../buttons/buttons'
+import genderJSON from './gender.json'
 
 function Info(props) {
   const { input, select, onNextStep, onPrevStep } = props
@@ -18,11 +19,13 @@ function Info(props) {
   progress += surname ? 0 : -13
   progress += gender ? 0 : -13
 
-  const onCheckHandler = e => {
+  const onCheckHandler = (e, func, field) => {
     if (e.target.value.length) {
-      e.target.className = `form-control inputData text-muted green`
+      e.target.className = `form-control input__data text-muted green`
+      func(field, e.target.value)
     } else {
-      e.target.className = `form-control inputData text-muted red`
+      e.target.className = `form-control input__data red`
+      func(field, '')
     }
   }
 
@@ -35,7 +38,7 @@ function Info(props) {
       <Progress width={`${progress}%`} />
       <Input field="Name" value={name} checkFunction={onCheckHandler} />
       <Input field="Surname" value={surname} checkFunction={onCheckHandler} />
-      <Select field="Gender" value={gender} />
+      <Select field="Gender" value={gender} json={genderJSON} />
       <Buttons
         onPrevStep={onPrevStep}
         onNextStep={() => (name && surname && gender ? onNextStep() : null)}
