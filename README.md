@@ -6,7 +6,7 @@
 ##### JS, REST, React, Redux, Bootstrap.
 ---
 ### Description:  
-##### Reistration form. Validate email,
+##### Reistration form. Used to collect information about the user, validate email via http request.
 --- 
 
 Задание:
