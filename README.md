@@ -1,68 +1,31 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Validation Form  
+### Link:  
+##### https://hhh1361.github.io/validation-form/  
+---
+### Technologies:  
+##### JS, REST, React, Redux, Bootstrap.
+---
+### Description:  
+##### Reistration form. Validate email,
+--- 
 
-## Available Scripts
+Задание:
+Создать форму регистрации, которая состоит из 5-ти простых шагов. При этом каждый шаг должен быть выполнен отдельным компонентом.  
 
-In the project directory, you can run:
+Заголовок вверху должен меняться при каждом шаге.  
+Синяя полоска должна заполняться по мере продвижения по шагам.  
+Все поля формы, кроме Company обязательны.  
+На шаге Company - если поле заполнено - текст на кнопке Next Step, если не заполнено - Skip this step.  
+Шаг Timezone - значение должно определяться автоматически.  
+Переход на следующий шаг возможен только после валидации всех полей текущего шага.  
+Email нужно проверить на уникальность, сделать это можно отправив POST запрос:  
 
-### `npm start`
+curl -X POST \https://frontapi.vinchain.io/auth/api/check-email/ \-H 'Content-Type: application/json' \-d '{"email":"test@test.com"}'
+Если статус ответа 200 - значит email валидный, если 400 - пользователь с таким email уже существует.  
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+На последнем шаге данные необходимо сохранить в Redux Store, убрать форму и вывести сообщение “Congratulations! Your account has been created”  
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Страницу сверстать с помощью Bootstrap. Допускаются небольшие отклонения от макета.  
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Ссылка на макеты:  
+https://drive.google.com/drive/folders/1GfR1fC7VhfTOpgYOtZODqIodOJX8CWXj
